@@ -1,13 +1,125 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+/*Body Border */
+
+html {
+  border:5px solid black;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(to top right ,#f5c5af 50%, #edd0d0 50%);
+  background-repeat: repeat;
+  position:relative;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* fonts */
+
+h1, h2, h3 {
+  font-family: 'Mitr', sans-serif;
+}
+
+/* background Stying */
+
+#doughnut {
+  /* border: 1px solid red; */
+  z-index: 1;
+  position: absolute;
+
+  height: 291px;
+  width: 100px;
+  top:50px;
+  /* left: 10px; */
+  margin: 0;
+
+  background-image: url('./doughnuts.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px #75655d96;
+}
+
+.main-h1 {
+  position: absolute;
+  z-index: 3;
+
+  left: 0;
+  right: 0;
+  margin: 135px 0;
+
+  font-size: 4em ;
+  font-weight: 500;
+  text-align: center;
+  color: #232853;
+  
+}
+
+/* main app container styling */
+
+main#app-content {
+  /* border: 1px solid red; */
+  z-index: 2;
+  position: absolute;
+
+  min-height: 65vh;
+  width: 85vw;
+  left: 0;
+  right: 0;
+  margin: 200px auto;
+
+  background-color: #f5c5af;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px #75655d96;
+
+}
+
+header {
+  position: absolute;
+
+  height: 10%;
+  width: 100%;
+  top: 0;
+
+  background-color: #f3f5f2;
+  border-radius: 5px 5px 0 0;
+}
+
+section {
+  /* border: 1px solid red; */
+  position: absolute;
+
+  height: 85%;
+  width: 100%;
+  top: 10%;
+  bottom: 5%;
+
+  padding: 10px;
+}
+
+footer {
+  position: absolute;
+
+  height: 5%;
+  width: 100%;
+  bottom: 0;
+  
+  background-color: #f3f5f2;
+  border-radius: 0 0 5px 5px;
 }
