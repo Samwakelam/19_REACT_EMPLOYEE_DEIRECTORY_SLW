@@ -1,10 +1,12 @@
-import logo from '../logo.svg';
 import './App.css';
+import MyForm from '../MyForm/MyForm.js';
+import MyTable from '../MyTable/MyTable.js';
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <MyForm />
+      <MyTable />
     </div>
   );
 }
