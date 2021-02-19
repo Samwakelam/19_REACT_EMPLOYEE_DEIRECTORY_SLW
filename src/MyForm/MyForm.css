@@ -1,0 +1,24 @@
+form {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+label {
+  font-family: 'Mitr', sans-serif;
+  font-weight: 200;
+  margin-right: 12px;
+}
+
+input {
+  font-family: 'Mitr', sans-serif;
+  border-radius: 15px;
+  border: 2px solid #ef529c;
+  padding: 5px 15px;
+  margin-right:20px;
+  flex-grow: 1;
+}
+
+input:focus {
+  outline: unset;
+  box-shadow: 0 0 10px 2px #f287b7 inset;
+}
