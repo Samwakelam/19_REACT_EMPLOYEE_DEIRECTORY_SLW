@@ -12,23 +12,24 @@
 html {
   border:5px solid black;
   min-height: 100vh;
+  position: relative;
 }
 
 body {
   margin: 0;
   background-image: linear-gradient(to top right ,#f5c5af 50%, #edd0d0 50%);
-  background-repeat: repeat;
-  position:relative;
+  /* background-repeat: repeat; */
+  position: relative;
 }
 
 * {
   box-sizing: border-box;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 /* fonts */
 
@@ -49,7 +50,7 @@ h1, h2, h3 {
   /* left: 10px; */
   margin: 0;
 
-  background-image: url('./doughnuts.png');
+  background-image: url('./img/doughnuts.png');
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -101,6 +102,12 @@ header {
   border-radius: 5px 5px 0 0;
 }
 
+.faux-btn {
+  height: 16px;
+  width: 16px;
+  margin: 6px 0 0 6px;
+}
+
 section {
   /* border: 1px solid red; */
   position: absolute;
@@ -111,6 +118,31 @@ section {
   bottom: 5%;
 
   padding: 10px;
+  overflow: auto;
+}
+
+/* -------------------  SCROLL BAR  ------------------------- */
+/* height */
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #edd0d0; */
+  background: #f5c5af;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ef529c;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f287b7;
 }
 
 footer {
