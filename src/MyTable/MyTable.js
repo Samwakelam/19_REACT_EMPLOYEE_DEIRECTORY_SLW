@@ -42,7 +42,10 @@ const UserSearch  = () => {
     // call it now to auto run - fetch data is a function! 
     fetchData();
 
-  },[]); // what is the extra [] for ? -
+  },[]); 
+  // what is the extra [] for ? - 
+  // explicitly that there are no dependencies, we only want this to fire once, onMount.
+  // you can have it dependent on multiple things passd in to the array.
   
   console.log('UserSearch, fetchResults =', fetchResults); 
 
