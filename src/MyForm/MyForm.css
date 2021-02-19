@@ -10,6 +10,7 @@ label {
 }
 
 input {
+  font-family: 'Mitr', sans-serif;
   border-radius: 15px;
   border: 2px solid #ef529c;
   padding: 5px 15px;
