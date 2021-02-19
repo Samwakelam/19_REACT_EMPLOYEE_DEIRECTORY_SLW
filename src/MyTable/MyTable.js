@@ -27,17 +27,30 @@ const UserSearch = ({ filter }) => {
   useEffect(() => {
     // define the code
     const fetchData = async () => {
-      const queryURL = 'https://randomuser.me/api/?results=50'
+      const queryURL = 'https://randomuser.me/api/?results=50&nat=gb'
       // console.log('UserSearch, queryURL =', queryURL);
 
       const response = await fetch(queryURL);
       if (response.ok) {
         // console.log('UserSearch, fetch, response =', response);
 
+        
         // call setResults here to put the results into state, to cause a re-render
         const userData = await response.json();
-        // console.log('UserSeach, userData =', userData); 
-        setFetchResults(userData.results);
+        const sortByName = userData.results.slice(0).sort(function(a,b){
+          console.log('a =',a.name.last);
+          if ( a.name.last < b.name.last ){
+            return -1;
+          }
+          if ( a.name.last > b.name.last ){
+            return 1;
+          }
+          return 0;
+        });
+        
+        console.log('UserSeach, userData =', userData); 
+        console.log('UserSeach, sortName =', sortByName); 
+        setFetchResults(sortByName);
       } else {
         console.log('fetch error', response.status);
 
