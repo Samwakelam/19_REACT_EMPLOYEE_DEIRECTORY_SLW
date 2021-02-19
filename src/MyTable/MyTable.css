@@ -1,0 +1,38 @@
+th {
+  font-family: 'Mitr', sans-serif;
+  font-weight: 500;
+  color: #232853;
+}
+
+td {
+  font-family: 'Mitr', sans-serif;
+  font-size: 0.8em;
+  font-weight: 200;
+  color: #232853;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 2px solid #ef529c;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  border-top: none;
+}
+
+td:first-child, th:first-child {
+  border-left: none;
+}
+
+td:last-child, th:last-child {
+  border-right: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}

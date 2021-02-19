@@ -121,8 +121,8 @@ section {
   overflow: auto;
 }
 
-/* -------------------  SCROLL BAR  ------------------------- */
-/* height */
+/* SCROLL BAR */
+
 ::-webkit-scrollbar {
   height: 12px;
   width: 12px;
