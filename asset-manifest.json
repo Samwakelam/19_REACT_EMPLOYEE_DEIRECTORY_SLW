@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/main.4e36d52f.chunk.js",
-    "main.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/main.4e36d52f.chunk.js.map",
-    "runtime-main.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/runtime-main.ecdee3fb.js",
-    "runtime-main.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/runtime-main.ecdee3fb.js.map",
-    "static/js/2.8bebe127.chunk.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.8bebe127.chunk.js",
-    "static/js/2.8bebe127.chunk.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.8bebe127.chunk.js.map",
-    "static/js/3.80c3a5ce.chunk.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/3.80c3a5ce.chunk.js",
-    "static/js/3.80c3a5ce.chunk.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/3.80c3a5ce.chunk.js.map",
+    "main.css": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/css/main.ce0362e8.chunk.css",
+    "main.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/main.e289bc95.chunk.js",
+    "main.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/main.e289bc95.chunk.js.map",
+    "runtime-main.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/runtime-main.09019aa8.js",
+    "runtime-main.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/runtime-main.09019aa8.js.map",
+    "static/js/2.903edbaf.chunk.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.903edbaf.chunk.js",
+    "static/js/2.903edbaf.chunk.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.903edbaf.chunk.js.map",
+    "static/js/3.a179e53c.chunk.js": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/3.a179e53c.chunk.js",
+    "static/js/3.a179e53c.chunk.js.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/3.a179e53c.chunk.js.map",
     "index.html": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.8bebe127.chunk.js.LICENSE.txt": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.8bebe127.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/media/logo.6ce24c58.svg"
+    "static/css/main.ce0362e8.chunk.css.map": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/css/main.ce0362e8.chunk.css.map",
+    "static/js/2.903edbaf.chunk.js.LICENSE.txt": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/js/2.903edbaf.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/19_REACT_EMPLOYEE_DEIRECTORY_SLW/static/media/doughnuts.05101bd2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ecdee3fb.js",
-    "static/js/2.8bebe127.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.4e36d52f.chunk.js"
+    "static/js/runtime-main.09019aa8.js",
+    "static/js/2.903edbaf.chunk.js",
+    "static/css/main.ce0362e8.chunk.css",
+    "static/js/main.e289bc95.chunk.js"
   ]
 }
