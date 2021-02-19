@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Employee Directory - React 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an application that demonstrates the display of an employee directory using React and Random User Generator. 
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+#### User Story
 
-### `npm start`
+As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Business Context
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+During this project I have learnt how to break up an application’s UI into React components and manage component state, responding to user events. 
 
-### `npm run build`
+## Contents: 
+1. [Installation](#Instalation) 
+2. [Usage](#Usage)
+3. [Improvements](#Improvements)
+4. [Updates](#Updates)
+5. [Credits](#Credits)
+6. [License](#License)
+7. [Contact](#Contact)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Step 1: Download the zip file of the project.
+* Step 2: Install the npm dependencies to your machine using first `>npm init`, then `>npm install <package name>`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The package was built using `Create-React-App`. 
 
-### `npm run eject`
+### Project dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Node.js
+* React
+* gh-pages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technologies 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Languages I have used are:
+* Javascript
+* HTML
+* CSS
+* React
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage
 
-## Learn More
+* Step 1: You can utilise nodemon by running the command from your terminal `>npm run start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To use the App you can visit the deployment on [Github Pages](https://samwakelam.github.io/19_REACT_EMPLOYEE_DEIRECTORY_SLW/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Initial ScreenShot](public/assets/screenShot/shot1.png)
 
-### Code Splitting
+## Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Required: 
+* There needs to be a sort feature added to the application. The API data is already sorted by alphabetical order by last name; functionality for the employeer to sort by another field is requiered. 
 
-### Analyzing the Bundle Size
+I would like to add: 
+* Mobile Responsiveness.
+* Filter by ... select option. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Updates 
 
-### Making a Progressive Web App
+There is nothing to display at this time.
+    
+## Credits 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Resources I have referenced:   
+* docs.mongodb.com
+* mongoosejs.com
 
-### Advanced Configuration
+## License 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* GNU GPL v3<br />  
 
-### Deployment
+Where appropriate: 
+Alot of the graphics included in my projects I have drawn myself and are copyright 2021. 
+No useage without permission. 
+If I have not originated the imagery I have gained the permission of the owner and acreditied 
+where necessary. These are also not for re-purpose without permission of the owner.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You must make reference where the code originated. I would also love to see what changes and improvements you make.  
+Design by Samantha Wakelam, please respect copyright 2020. 
 
-### `npm run build` fails to minify
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Name: Samantha Wakelam  <br />Email: sam.wakelam@hotmail.co.uk <br />Github Profile: Sam Wakelam 
