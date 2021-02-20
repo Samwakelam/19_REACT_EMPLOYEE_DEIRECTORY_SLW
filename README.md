@@ -14,6 +14,8 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 
 ---
 
+My project stands out by the use of state and apparent memory of your last chosen filter /sort action. The user can manipluate the data in any order they choose and the UI will further filter or sort the data they have infront of them. 
+
 During this project I have learnt how to break up an application’s UI into React components and manage component state, responding to user events. 
 
 ## Contents: 
@@ -65,8 +67,17 @@ I would like to add:
 
 ## Updates 
 
-(20.02.2021) - sort feature added 
+(20.02.2021)
+ - Sort feature added 
+
 ![Sort feature screen shot](public/assets/screenShot/shot2.png)
+
+- Sort will remember state of all previous requests. ie, if you filter and then sort by age it will maintain the filter. It will then further remember your filter if you change back to neutral option 'Sort By'. It will even remmeber how you sorted the data if you remove and add a new filter. 
+
+- Reverse Data button added. 
+Needs improvement, you can reverse data once per sort or filter but not sequentially. 
+
+![Reverse feature screen shot](public/assets/screenShot/shot3.png)
     
 ## Credits 
 
