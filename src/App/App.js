@@ -7,21 +7,26 @@ function App() {
 
   const [inputFilter, setInputFilter] = useState('');
   const [selectFilter, setSelectFilter] = useState('');
+  const [stateThatChanged, setStateThatChanged] = useState('');
 
-  const handleInputChange = (value) => {
+  const handleInputChange = (value, input) => {
     setInputFilter(value);
-    // console.log('App.js, value =',value);
+    setStateThatChanged(input);
+    // console.log('App.js, input, value =',value);
+    // console.log('App.js, input, input =',input);
   }
 
-  const handleSelectChange = (value) => {
-    console.log('App.js, value =',value);
+  const handleSelectChange = (value, select) => {
     setSelectFilter(value);
+    setStateThatChanged(select);
+    // console.log('App.js, select, value =',value);
+    // console.log('App.js, select, select =',select);
   }
 
   return (
     <div className="App">
       <MyForm onInputChange={handleInputChange} onSelectChange={handleSelectChange} sort={selectFilter} />
-      <MyTable filter={inputFilter} sort={selectFilter} />
+      <MyTable filter={inputFilter} sort={selectFilter} state={stateThatChanged} />
     </div>
   );
 }
