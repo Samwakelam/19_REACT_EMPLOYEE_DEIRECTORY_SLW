@@ -19,7 +19,7 @@ input {
   flex-grow: 1;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, #up-down:focus {
   outline: unset;
   box-shadow: 0 0 10px 2px #f287b7 inset;
 }
@@ -38,4 +38,19 @@ option {
 
 .hide{
   display: none;
+}
+
+#up-down {
+  font-family: 'Mitr', sans-serif;
+  border-radius: 15px;
+  border: 2px solid #ef529c;
+  padding: 5px 15px;
+  background-color: white;
+  margin: 0 20px;
+  vertical-align: middle;
+}
+
+#up-down>img {
+  height: 16px;
+  width: 16px;
 }

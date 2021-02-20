@@ -1,17 +1,24 @@
 import './MyForm.css';
 import { useState } from 'react';
 
-const MyForm = ({ onInputChange, onSelectChange, sort }) => {
+const MyForm = ({ onInputChange, onSelectChange, sort, onReverse }) => {
 
   // const [inputFilter, setInputFilter] = useState('');
 
   const inputChange = (event) => {
     // console.log(event.target.value);
-    onInputChange(event.target.value, 'input');
+    onInputChange(event.target.value, 'filter');
   }
 
   const selectChange = (event) => {
-    onSelectChange(event.target.value, 'select');
+    onSelectChange(event.target.value, 'sort');
+  }
+
+  const reverseButton = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('click');
+    onReverse(true); 
   }
 
   return (
@@ -26,6 +33,8 @@ const MyForm = ({ onInputChange, onSelectChange, sort }) => {
         <option value="dob">DOB</option>
         <option value="name">Name</option>
       </select>
+
+      <button id='up-down' type="button"><img src={`${process.env.PUBLIC_URL}/assets/img/up-down.png`} alt='up-down arrows' onClick={reverseButton}/></button>
 
     </form>
   );

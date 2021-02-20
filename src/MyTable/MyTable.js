@@ -17,11 +17,12 @@ const TableHead = () => {
 }
 
 
-const UserSearch = ({ filter, sort, state }) => {
+const UserSearch = ({ filter, sort, state, onReverse, onRender }) => {
 
   // console.log('MyTable.js, UserSearch, filter =', filter);
   // console.log('MyTable.js, UserSearch, sort =', sort);
   // console.log('MyTable.js, UserSearch, state =', state);
+  // console.log('MyTable.js, UserSearch, onReverse =', onReverse);
 
   const [ fetchResults, setFetchResults ] = useState([]);
   const [ filteredResults, setFilteredResults ] = useState([]);
@@ -125,20 +126,47 @@ const UserSearch = ({ filter, sort, state }) => {
           // console.log(sortedData);
           setSortedResults(sortedData);
         break;
-        case 'name' || 'sortBy':
+        case 'name': 
+          sortedData = resultsToSort.slice(0).sort(function(a,b){
+            if ( a.name.last < b.name.last ){
+              return -1;
+            }
+            if ( a.name.last > b.name.last ){
+              return 1;
+            }
+            return 0;
+          });
+          setSortedResults(sortedData);
+        break;
+        case 'sortBy':
           setSortedResults([]);
         break;
       }
 
   }, [sort]);
 
+  useEffect(() => {
+
+    if(state === 'filter'){
+      setFilteredResults(filteredResults.reverse());
+      return onRender(false);
+    } else if (state === 'sort'){
+      setSortedResults(sortedResults.reverse());
+      return onRender(false);
+    } else {
+      setFetchResults(fetchResults.reverse());
+      return onRender(false);
+    }
+
+  }, [onReverse]);
+
   // console.log('filteredResults.length !== 0', filteredResults.length !== 0 );
   // console.log('sortedResults.length !== 0', sortedResults.length !== 0 );
 
   let showResults;
-  if(state === 'input'){
+  if(state === 'filter' && filteredResults.length !== 0 || sort === 'sortBy' && filteredResults.length !== 0 ){
     showResults = filteredResults;
-  } else if(state === 'select') {
+  } else if(state === 'sort' && sortedResults.length !== 0 || sortedResults.length !== 0 && filteredResults.length === 0) {
     showResults = sortedResults;
   } else {
     showResults = fetchResults;
@@ -162,13 +190,13 @@ const UserSearch = ({ filter, sort, state }) => {
 }
 
 
-const MyTable = ({ filter, sort, state }) => {
+const MyTable = ({ filter, sort, state, onReverse, onRender }) => {
 
   // console.log('MyTable, filter =', filter);
   return (
     <table>
       <TableHead />
-      <UserSearch filter={filter} sort ={sort} state={state} />
+      <UserSearch filter={filter} sort ={sort} state={state} onReverse={onReverse} onRender={onRender} />
 
     </table>
   );

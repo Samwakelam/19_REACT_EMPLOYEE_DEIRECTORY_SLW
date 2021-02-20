@@ -8,6 +8,7 @@ function App() {
   const [inputFilter, setInputFilter] = useState('');
   const [selectFilter, setSelectFilter] = useState('');
   const [stateThatChanged, setStateThatChanged] = useState('');
+  const [reverseData, setReverseData ] = useState(false);
 
   const handleInputChange = (value, input) => {
     setInputFilter(value);
@@ -23,10 +24,15 @@ function App() {
     // console.log('App.js, select, select =',select);
   }
 
+  const handleReverseData = (state) => {
+    console.log('reverse state =',state);
+    setReverseData(state);
+  }
+
   return (
     <div className="App">
-      <MyForm onInputChange={handleInputChange} onSelectChange={handleSelectChange} sort={selectFilter} />
-      <MyTable filter={inputFilter} sort={selectFilter} state={stateThatChanged} />
+      <MyForm onInputChange={handleInputChange} onSelectChange={handleSelectChange} sort={selectFilter} onReverse={handleReverseData} />
+      <MyTable filter={inputFilter} sort={selectFilter} state={stateThatChanged} onReverse={reverseData} onRender={handleReverseData} />
     </div>
   );
 }
