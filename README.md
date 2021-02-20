@@ -65,7 +65,8 @@ I would like to add:
 
 ## Updates 
 
-There is nothing to display at this time.
+(20.02.2021) - sort feature added 
+![Sort feature screen shot](public/assets/screenShot/shot2.png)
     
 ## Credits 
 

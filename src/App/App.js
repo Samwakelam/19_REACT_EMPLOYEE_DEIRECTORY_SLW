@@ -6,16 +6,22 @@ import MyTable from '../MyTable/MyTable.js';
 function App() {
 
   const [inputFilter, setInputFilter] = useState('');
+  const [selectFilter, setSelectFilter] = useState('');
 
   const handleInputChange = (value) => {
     setInputFilter(value);
     // console.log('App.js, value =',value);
   }
 
+  const handleSelectChange = (value) => {
+    console.log('App.js, value =',value);
+    setSelectFilter(value);
+  }
+
   return (
     <div className="App">
-      <MyForm onInputChange={handleInputChange}/>
-      <MyTable filter={inputFilter}/>
+      <MyForm onInputChange={handleInputChange} onSelectChange={handleSelectChange} sort={selectFilter} />
+      <MyTable filter={inputFilter} sort={selectFilter} />
     </div>
   );
 }
