@@ -17,10 +17,11 @@ const TableHead = () => {
 }
 
 
-const UserSearch = ({ filter, sort }) => {
+const UserSearch = ({ filter, sort, state }) => {
 
   // console.log('MyTable.js, UserSearch, filter =', filter);
   // console.log('MyTable.js, UserSearch, sort =', sort);
+  // console.log('MyTable.js, UserSearch, state =', state);
 
   const [ fetchResults, setFetchResults ] = useState([]);
   const [ filteredResults, setFilteredResults ] = useState([]);
@@ -73,6 +74,13 @@ const UserSearch = ({ filter, sort }) => {
   // you can have it dependent on multiple things passd in to the array.
 
   useEffect(() => {
+
+    let resultsToFilter;
+    if (sortedResults.length !== 0) {
+      resultsToFilter = sortedResults;
+    } else {
+      resultsToFilter = fetchResults;
+    }
     
     if( filter === '') {
 
@@ -80,7 +88,7 @@ const UserSearch = ({ filter, sort }) => {
 
     } else {
 
-      let filterEmployeeByName = fetchResults.filter((person) => {
+      let filterEmployeeByName = resultsToFilter.filter((person) => {
         let name = (`${person.name.first} ${person.name.last}`).toString().toLowerCase();
         const condition = name.includes(filter);
         return condition;
@@ -93,90 +101,74 @@ const UserSearch = ({ filter, sort }) => {
   }, [filter]);
 
   useEffect(() => {
+
+    let resultsToSort;
+    if (filteredResults.length !== 0) {
+      resultsToSort = filteredResults;
+    } else {
+      resultsToSort = fetchResults;
+    }
+
     let sortedData;
       switch (sort) {
         case 'age':
-          sortedData = fetchResults.slice(0).sort(function(a,b){
+          sortedData = resultsToSort.slice(0).sort(function(a,b){
             return a.dob.age - b.dob.age;
           });
           // console.log(sortedData);
           setSortedResults(sortedData);
         break;
         case 'dob' :
-          sortedData = fetchResults.slice(0).sort(function(a,b){
+          sortedData = resultsToSort.slice(0).sort(function(a,b){
             return new Date(a.dob.date) - new Date(b.dob.date);
           });
           // console.log(sortedData);
           setSortedResults(sortedData);
         break;
-        case 'name' :
+        case 'name' || 'sortBy':
           setSortedResults([]);
         break;
       }
-    
 
   }, [sort]);
 
   // console.log('filteredResults.length !== 0', filteredResults.length !== 0 );
   // console.log('sortedResults.length !== 0', sortedResults.length !== 0 );
 
-  if(filteredResults.length !== 0){
-    return (
-      filteredResults.map(result => (
-        <tbody key={result.login.uuid} id={result.login.uuid}>
-          <tr>
-            <td><img src={result.picture.thumbnail} alt="employee image" /></td>
-            <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
-            <td>{result.email}</td>
-            <td>{result.cell}</td>
-            <td>{result.dob.date}</td>
-            <td>{result.dob.age}</td>
-          </tr>
-        </tbody>
-      ))
-    );
-  } else if(sortedResults.length !== 0) {
-    return (
-      sortedResults.map(result => (
-        <tbody key={result.login.uuid} id={result.login.uuid}>
-          <tr>
-            <td><img src={result.picture.thumbnail} alt="employee image" /></td>
-            <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
-            <td>{result.email}</td>
-            <td>{result.cell}</td>
-            <td>{result.dob.date}</td>
-            <td>{result.dob.age}</td>
-          </tr>
-        </tbody>
-      ))
-    );
+  let showResults;
+  if(state === 'input'){
+    showResults = filteredResults;
+  } else if(state === 'select') {
+    showResults = sortedResults;
   } else {
-    return(
-      fetchResults.map(result => (
-        <tbody key={result.login.uuid} id={result.login.uuid}>
-          <tr>
-            <td><img src={result.picture.thumbnail} alt="employee image" /></td>
-            <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
-            <td>{result.email}</td>
-            <td>{result.cell}</td>
-            <td>{result.dob.date}</td>
-            <td>{result.dob.age}</td>
-          </tr>
-        </tbody>
-      ))
-    );
+    showResults = fetchResults;
   }
+
+  return(
+    showResults.map(result => (
+      <tbody key={result.login.uuid} id={result.login.uuid}>
+        <tr>
+          <td><img src={result.picture.thumbnail} alt="employee image" /></td>
+          <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
+          <td>{result.email}</td>
+          <td>{result.cell}</td>
+          <td>{result.dob.date}</td>
+          <td>{result.dob.age}</td>
+        </tr>
+      </tbody>
+    ))
+  );
 
 }
 
 
-const MyTable = ({ filter, sort }) => {
+const MyTable = ({ filter, sort, state }) => {
 
   // console.log('MyTable, filter =', filter);
   return (
     <table>
       <TableHead />
-      <UserSearch filter={filter} sort ={sort} />
+      <UserSearch filter={filter} sort ={sort} state={state} />
 
     </table>
   );

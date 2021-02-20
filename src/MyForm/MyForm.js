@@ -7,11 +7,11 @@ const MyForm = ({ onInputChange, onSelectChange, sort }) => {
 
   const inputChange = (event) => {
     // console.log(event.target.value);
-    onInputChange(event.target.value);
+    onInputChange(event.target.value, 'input');
   }
 
   const selectChange = (event) => {
-    onSelectChange(event.target.value);
+    onSelectChange(event.target.value, 'select');
   }
 
   return (
