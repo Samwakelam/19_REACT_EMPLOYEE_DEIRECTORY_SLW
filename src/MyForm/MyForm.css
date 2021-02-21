@@ -1,5 +1,7 @@
 form {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 12px;
 }
 
