@@ -24,9 +24,9 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
   // console.log('MyTable.js, UserSearch, onReverse =', onReverse);
   // console.log('MyTable.js, UserSearch, filterBy =', filterBy);
 
-  const [ fetchResults, setFetchResults ] = useState([]);
-  const [ filteredResults, setFilteredResults ] = useState([]);
-  const [ sortedResults, setSortedResults ] = useState([]);
+  const [fetchResults, setFetchResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [sortedResults, setSortedResults] = useState([]);
 
   useEffect(() => {
     // define the code
@@ -38,15 +38,15 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
       if (response.ok) {
         // console.log('UserSearch, fetch, response =', response);
 
-        
+
         // call setResults here to put the results into state, to cause a re-render
         const userData = await response.json();
-        const sortByName = userData.results.slice(0).sort(function(a,b){
-          
-          if ( a.name.last < b.name.last ){
+        const sortByName = userData.results.slice(0).sort(function (a, b) {
+
+          if (a.name.last < b.name.last) {
             return -1;
           }
-          if ( a.name.last > b.name.last ){
+          if (a.name.last > b.name.last) {
             return 1;
           }
           return 0;
@@ -54,10 +54,10 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
         // format DOB
         userData.results.forEach(person => {
           // console.log('dob =', person.dob.date.slice(0,10));
-          const formatDOB = person.dob.date.slice(0,10);
+          const formatDOB = person.dob.date.slice(0, 10);
           person.dob.date = formatDOB;
         });
-        
+
         // console.log('UserSeach, userData =', userData); 
         // console.log('UserSeach, sortName =', sortByName); 
         setFetchResults(sortByName);
@@ -83,12 +83,12 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
       resultsToFilter = fetchResults;
     }
 
-    
-    if( filter === '') {
+
+    if (filter === '') {
 
       setFilteredResults([]);
 
-    } else if(filterBy === 'name'){
+    } else if (filterBy === 'name') {
       let filterEmployeeByName = resultsToFilter.filter((person) => {
         let name = (`${person.name.first} ${person.name.last}`).toString().toLowerCase();
         const condition = name.includes(filter);
@@ -97,7 +97,7 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
       // console.log('MyTable, filterEmployeeByName =', filterEmployeeByName);
       setFilteredResults(filterEmployeeByName);
 
-    } else if(filterBy === 'age') {
+    } else if (filterBy === 'age') {
       let filterEmployeeByAge = resultsToFilter.filter((person) => {
         let age = (person.dob.age).toString();
         const condition = age.includes(filter);
@@ -105,12 +105,12 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
       });
       setFilteredResults(filterEmployeeByAge);
 
-    } else if(filterBy === 'dob') {
+    } else if (filterBy === 'dob') {
       let numericMonth;
-      console.log('isNotANumber', isNaN(filter));
-      if(isNaN(filter)){
+      // console.log('isNotANumber', isNaN(filter));
+      if (isNaN(filter)) {
         const month = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-        const filterFormat = filter.substring(0,3).toLowerCase();
+        const filterFormat = filter.substring(0, 3).toLowerCase();
         numericMonth = month.indexOf(filterFormat) + 1;
       } else {
         numericMonth = parseInt(filter);
@@ -127,7 +127,7 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
         return condition;
       });
       setFilteredResults(filterEmployeeByMonth);
-      
+
     }
 
   }, [filter, filterBy]);
@@ -142,46 +142,46 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
     }
 
     let sortedData;
-      switch (sort) {
-        case 'age':
-          sortedData = resultsToSort.slice(0).sort(function(a,b){
-            return a.dob.age - b.dob.age;
-          });
-          // console.log(sortedData);
-          setSortedResults(sortedData);
+    switch (sort) {
+      case 'age':
+        sortedData = resultsToSort.slice(0).sort(function (a, b) {
+          return a.dob.age - b.dob.age;
+        });
+        // console.log(sortedData);
+        setSortedResults(sortedData);
         break;
-        case 'dob' :
-          sortedData = resultsToSort.slice(0).sort(function(a,b){
-            return new Date(a.dob.date) - new Date(b.dob.date);
-          });
-          // console.log(sortedData);
-          setSortedResults(sortedData);
+      case 'dob':
+        sortedData = resultsToSort.slice(0).sort(function (a, b) {
+          return new Date(a.dob.date) - new Date(b.dob.date);
+        });
+        // console.log(sortedData);
+        setSortedResults(sortedData);
         break;
-        case 'name': 
-          sortedData = resultsToSort.slice(0).sort(function(a,b){
-            if ( a.name.last < b.name.last ){
-              return -1;
-            }
-            if ( a.name.last > b.name.last ){
-              return 1;
-            }
-            return 0;
-          });
-          setSortedResults(sortedData);
+      case 'name':
+        sortedData = resultsToSort.slice(0).sort(function (a, b) {
+          if (a.name.last < b.name.last) {
+            return -1;
+          }
+          if (a.name.last > b.name.last) {
+            return 1;
+          }
+          return 0;
+        });
+        setSortedResults(sortedData);
         break;
-        case 'sortBy':
-          setSortedResults([]);
+      case 'sortBy':
+        setSortedResults([]);
         break;
-      }
+    }
 
   }, [sort]);
 
   useEffect(() => {
 
-    if(state === 'filter'){
+    if (state === 'filter') {
       setFilteredResults(filteredResults.reverse());
       return onRender(false);
-    } else if (state === 'sort'){
+    } else if (state === 'sort') {
       setSortedResults(sortedResults.reverse());
       return onRender(false);
     } else {
@@ -195,28 +195,40 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
   // console.log('sortedResults.length !== 0', sortedResults.length !== 0 );
 
   let showResults;
-  if(state === 'filter' && filteredResults.length !== 0 || sort === 'sortBy' && filteredResults.length !== 0 ){
+  if (state === 'filter' && filteredResults.length !== 0 || sort === 'sortBy' && filteredResults.length !== 0) {
     showResults = filteredResults;
-  } else if(state === 'sort' && sortedResults.length !== 0 || sortedResults.length !== 0 && filteredResults.length === 0) {
+  } else if (state === 'sort' && sortedResults.length !== 0 || sortedResults.length !== 0 && filteredResults.length === 0) {
     showResults = sortedResults;
   } else {
     showResults = fetchResults;
   }
 
-  return(
-    showResults.map(result => (
-      <tbody key={result.login.uuid} id={result.login.uuid}>
+  if (filter.length !== 0 && filteredResults.length === 0) {
+    return (
+      <tbody>
         <tr>
-          <td><img src={result.picture.thumbnail} alt="employee image" /></td>
-          <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
-          <td>{result.email}</td>
-          <td>{result.cell}</td>
-          <td>{result.dob.date}</td>
-          <td>{result.dob.age}</td>
+          <td colSpan='6'>No Match, Try Again ...</td>
         </tr>
       </tbody>
-    ))
-  );
+    )
+
+  } else {
+    return (
+      showResults.map(result => (
+        <tbody key={result.login.uuid} id={result.login.uuid}>
+          <tr>
+            <td><img src={result.picture.thumbnail} alt="employee image" /></td>
+            <td>{`${result.name.title} ${result.name.first} ${result.name.last}`}</td>
+            <td>{result.email}</td>
+            <td>{result.cell}</td>
+            <td>{result.dob.date}</td>
+            <td>{result.dob.age}</td>
+          </tr>
+        </tbody>
+      ))
+    );
+  }
+
 
 }
 
@@ -227,13 +239,13 @@ const MyTable = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
   return (
     <table>
       <TableHead />
-      <UserSearch 
-      filter={filter} 
-      sort ={sort} 
-      state={state} 
-      onReverse={onReverse} 
-      onRender={onRender}
-      filterBy={filterBy} 
+      <UserSearch
+        filter={filter}
+        sort={sort}
+        state={state}
+        onReverse={onReverse}
+        onRender={onRender}
+        filterBy={filterBy}
       />
     </table>
   );

@@ -9,7 +9,7 @@ function App() {
   const [selectFilter, setSelectFilter] = useState('');
   const [stateThatChanged, setStateThatChanged] = useState('');
   const [reverseData, setReverseData] = useState(false);
-  const [changeFilter, setChangeFilter] = useState(false);
+  const [changeFilter, setChangeFilter] = useState('name');
 
   const handleInputChange = (value, input) => {
     setInputFilter(value);
@@ -26,7 +26,7 @@ function App() {
   }
 
   const handleReverseData = (state) => {
-    console.log('reverse state =', state);
+    // console.log('reverse state =', state);
     setReverseData(state);
   }
 
