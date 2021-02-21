@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './MyTable.css';
+import './MyTable-media.css';
 
 const TableHead = () => {
   return (
