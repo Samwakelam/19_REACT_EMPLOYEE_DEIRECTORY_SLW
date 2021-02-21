@@ -5,9 +5,9 @@ form {
 
 label {
   font-family: 'Mitr', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   margin-right: 12px;
-  padding: auto 0;
+  padding:5px 0;
 }
 
 input {
@@ -31,6 +31,14 @@ select {
   padding: 5px 15px;
 }
 
+select#sort-filter {
+  border-radius: 15px 0 0 15px;
+  border-right: unset;
+}
+
+input#filter-text {
+  border-radius: 0 15px 15px 0;
+}
 
 option {
   border: 2px solid #ef529c;

@@ -16,13 +16,13 @@ const TableHead = () => {
   )
 }
 
-
-const UserSearch = ({ filter, sort, state, onReverse, onRender }) => {
+const UserSearch = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
 
   // console.log('MyTable.js, UserSearch, filter =', filter);
   // console.log('MyTable.js, UserSearch, sort =', sort);
   // console.log('MyTable.js, UserSearch, state =', state);
   // console.log('MyTable.js, UserSearch, onReverse =', onReverse);
+  // console.log('MyTable.js, UserSearch, filterBy =', filterBy);
 
   const [ fetchResults, setFetchResults ] = useState([]);
   const [ filteredResults, setFilteredResults ] = useState([]);
@@ -82,13 +82,13 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender }) => {
     } else {
       resultsToFilter = fetchResults;
     }
+
     
     if( filter === '') {
 
       setFilteredResults([]);
 
-    } else {
-
+    } else if(filterBy === 'name'){
       let filterEmployeeByName = resultsToFilter.filter((person) => {
         let name = (`${person.name.first} ${person.name.last}`).toString().toLowerCase();
         const condition = name.includes(filter);
@@ -97,9 +97,40 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender }) => {
       // console.log('MyTable, filterEmployeeByName =', filterEmployeeByName);
       setFilteredResults(filterEmployeeByName);
 
+    } else if(filterBy === 'age') {
+      let filterEmployeeByAge = resultsToFilter.filter((person) => {
+        let age = (person.dob.age).toString();
+        const condition = age.includes(filter);
+        return condition;
+      });
+      setFilteredResults(filterEmployeeByAge);
+
+    } else if(filterBy === 'dob') {
+      let numericMonth;
+      console.log('isNotANumber', isNaN(filter));
+      if(isNaN(filter)){
+        const month = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+        const filterFormat = filter.substring(0,3).toLowerCase();
+        numericMonth = month.indexOf(filterFormat) + 1;
+      } else {
+        numericMonth = parseInt(filter);
+
+      }
+
+
+      let filterEmployeeByMonth = resultsToFilter.filter((person) => {
+        const dob = (person.dob.date).toString().split('-');
+        const month = parseInt(dob[1]);
+        // console.log('month', month);
+        const condition = month === numericMonth;
+        // console.log('condition =', condition);
+        return condition;
+      });
+      setFilteredResults(filterEmployeeByMonth);
+      
     }
 
-  }, [filter]);
+  }, [filter, filterBy]);
 
   useEffect(() => {
 
@@ -190,14 +221,20 @@ const UserSearch = ({ filter, sort, state, onReverse, onRender }) => {
 }
 
 
-const MyTable = ({ filter, sort, state, onReverse, onRender }) => {
+const MyTable = ({ filter, sort, state, onReverse, onRender, filterBy }) => {
 
   // console.log('MyTable, filter =', filter);
   return (
     <table>
       <TableHead />
-      <UserSearch filter={filter} sort ={sort} state={state} onReverse={onReverse} onRender={onRender} />
-
+      <UserSearch 
+      filter={filter} 
+      sort ={sort} 
+      state={state} 
+      onReverse={onReverse} 
+      onRender={onRender}
+      filterBy={filterBy} 
+      />
     </table>
   );
 }

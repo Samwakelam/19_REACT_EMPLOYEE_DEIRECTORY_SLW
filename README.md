@@ -59,11 +59,14 @@ To use the App you can visit the deployment on [Github Pages](https://samwakelam
 ## Improvements
 
 Required: 
-* There needs to be a sort feature added to the application. The API data is already sorted by alphabetical order by last name; functionality for the employeer to sort by another field is requiered. 
+* There needs to be a sort feature added to the application. The API data is already sorted by alphabetical order by last name; functionality for the employeer to sort by another field is requiered. - Update (20.02.2021).
+
+  Improvements needed after update (20.02.2021) 
+  * The reverse data button works on none consecutive calls. This needs to be able to be called multiple times in succession.
 
 I would like to add: 
 * Mobile Responsiveness.
-* Filter by ... select option. 
+* Filter by ... select option. - Update (21.02.2021)
 
 ## Updates 
 
@@ -78,6 +81,11 @@ I would like to add:
 Needs improvement, you can reverse data once per sort or filter but not sequentially. 
 
 ![Reverse feature screen shot](public/assets/screenShot/shot3.png)
+
+(21.02.2021)
+- Filter field can be changed between name, age and date of birth. The user can enter month both as a string and a numeric value 
+
+![Change filter](public/assets/screenShot/shot4.png)
     
 ## Credits 
 
