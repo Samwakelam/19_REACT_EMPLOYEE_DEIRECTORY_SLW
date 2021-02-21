@@ -43,9 +43,7 @@ const MyForm = ({
     onReverse(true);
   }
 
-  useEffect(() => {
-    
-  }, [field])
+  
 
   return (
     <form>
