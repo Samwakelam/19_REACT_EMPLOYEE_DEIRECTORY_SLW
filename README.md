@@ -65,7 +65,7 @@ Required:
 * There needs to be a sort feature added to the application. The API data is already sorted by alphabetical order by last name; functionality for the employeer to sort by another field is requiered. - Update (20.02.2021).
 
   Improvements needed after update (20.02.2021) 
-  * The reverse data button works on none consecutive calls. This needs to be able to be called multiple times in succession.
+  * The reverse data button works on none consecutive calls. This needs to be able to be called multiple times in succession. - Update (22.02.2021)
 
 I would like to add: 
 * Mobile Responsiveness. - Update (22.02.2021)
@@ -95,6 +95,8 @@ Needs improvement, you can reverse data once per sort or filter but not sequenti
 
 ![Mobile View](public/assets/screenShot/shot5.png)
 ![Mobile View](public/assets/screenShot/shot6.png)
+
+- The reverse datat feature works consecutively.
     
 ## Credits 
 

@@ -40,7 +40,7 @@ const MyForm = ({
   const reverseButton = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log('click');
+    // console.log('click');
     onReverse(true);
   }
 
