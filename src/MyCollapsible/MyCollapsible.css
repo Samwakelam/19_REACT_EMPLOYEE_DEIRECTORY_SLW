@@ -1,0 +1,85 @@
+article {
+  font-family: 'Mitr', sans-serif;
+  color: #232853;
+}
+
+.collapsible {
+  background-color: #f3f5f2;
+  cursor: pointer;
+  padding: 5px 15px;
+  width: 100%;
+  border-left: 2px solid #ef529c;
+  border-right: 2px solid #ef529c;
+  border-top: unset;
+  border-bottom: unset;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible-container>article:first-child>button {
+  border-radius: 15px 15px 0 0 ;
+  border-top: 2px solid #ef529c;
+}
+.collapsible-container>article:last-child>button {
+  border-radius: 0 0 15px 15px ;
+  border-bottom: 2px solid #ef529c;
+}
+.collapsible-container>article>button{
+  display:flex;
+  justify-content: space-between;
+}
+.collapsible-container>article>button>span:first-child{
+  width: 200px;
+}
+
+.active, .collapsible:hover {
+  box-shadow: 0 0 10px 2px #f287b7 inset;
+}
+
+.collapsible:after {
+  content: '\002B';
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f3f5f2;
+  border-left: 2px solid #ef529c;
+  border-right: 2px solid #ef529c;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content>img {
+  margin: 12px;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
+.content>div {
+  display: inline-block;
+}
+
+.info-item>h3 {
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+  margin: 2px;
+}
+
+.info-item>p {
+  font-size: 0.8em;
+  font-weight: 200;
+  margin: 2px 5px;
+  display: inline-block;
+}
