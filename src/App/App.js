@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import MyForm from '../MyForm/MyForm.js';
-import MyTable from '../MyTable/MyTable.js';
+import UserData from '../UserData/UserData.js';
 
 function App() {
 
@@ -45,10 +45,10 @@ function App() {
       onChangeFilter={handleChangeFilter}
       />
 
-      <MyTable 
+      <UserData 
       filter={inputFilter} 
       sort={selectFilter} 
-      state={stateThatChanged} 
+      lastStateUsed={stateThatChanged} 
       onReverse={reverseData} 
       onRender={handleReverseData}
       filterBy={changeFilter} 
