@@ -55,7 +55,7 @@ Languages I have used are:
 
 * Step 1: You can utilise nodemon by running the command from your terminal `>npm run start`
 
-To use the App you can visit the deployment on [Github Pages](https://samwakelam.github.io/19_REACT_EMPLOYEE_DEIRECTORY_SLW/).
+To use the App you can visit the deployment on [Github Pages](https://samwakelam.github.io/19_REACT_EMPLOYEE_DIRECTORY_SLW/).
 
 ![Initial ScreenShot](public/assets/screenShot/shot1.png)
 
