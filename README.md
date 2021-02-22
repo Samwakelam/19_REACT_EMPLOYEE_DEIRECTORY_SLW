@@ -16,7 +16,9 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 
 My project stands out by the use of state and apparent memory of your last chosen filter /sort action. The user can manipluate the data in any order they choose and the UI will further filter or sort the data they have infront of them. 
 
-During this project I have learnt how to break up an application’s UI into React components and manage component state, responding to user events. 
+In addition the app is fully mobile responsive, changing from a table to a collapsible accordian when the contents is too big for the table display.
+
+During this project I have learnt how to break up an application’s UI into React components and manage component state, responding to user events. I have been able to use react-responsive and look at react-collapsible although I chose to build my own accordian from scratch.
 
 ## Contents: 
 1. [Installation](#Instalation) 
@@ -38,6 +40,7 @@ During this project I have learnt how to break up an application’s UI into Rea
 
 * Node.js
 * React
+* React-responsive npm package
 * gh-pages
 
 ### Technologies 
@@ -65,7 +68,7 @@ Required:
   * The reverse data button works on none consecutive calls. This needs to be able to be called multiple times in succession.
 
 I would like to add: 
-* Mobile Responsiveness.
+* Mobile Responsiveness. - Update (22.02.2021)
 * Filter by ... select option. - Update (21.02.2021)
 
 ## Updates 
@@ -86,6 +89,12 @@ Needs improvement, you can reverse data once per sort or filter but not sequenti
 - Filter field can be changed between name, age and date of birth. The user can enter month both as a string and a numeric value 
 
 ![Change filter](public/assets/screenShot/shot4.png)
+
+(22.02.2021)
+- The app is fully mobile responsive and makes use of the npm package react-responsive.
+
+![Mobile View](public/assets/screenShot/shot5.png)
+![Mobile View](public/assets/screenShot/shot6.png)
     
 ## Credits 
 
