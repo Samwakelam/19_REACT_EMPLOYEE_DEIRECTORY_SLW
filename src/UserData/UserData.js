@@ -176,7 +176,9 @@ const UserData = ({
 
   useEffect(() => {
 
-    if (lastStateUsed === 'filter') {
+    if (onReverse === false){
+      return
+    } else if (lastStateUsed === 'filter') {
       setFilteredResults(filteredResults.reverse());
       return onRender(false);
     } else if (lastStateUsed === 'sort') {
@@ -187,7 +189,7 @@ const UserData = ({
       return onRender(false);
     }
 
-  }, [onReverse]);
+  }, [onReverse, lastStateUsed]);
 
   // console.log('MyTable, filter =', filter);
   return (
