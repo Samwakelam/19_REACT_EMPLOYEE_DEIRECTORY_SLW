@@ -29,7 +29,7 @@ const UserData = ({
   useEffect(() => {
     // define the code
     const fetchData = async () => {
-      const queryURL = 'https://randomuser.me/api/?results=10&nat=gb'
+      const queryURL = 'https://randomuser.me/api/?results=50&nat=gb'
       // console.log('UserSearch, queryURL =', queryURL);
 
       const response = await fetch(queryURL);
